@@ -101,9 +101,9 @@ module Enumerable
       self.my_each { |el| new_arr << proc.call(el) }
     elsif self.instance_of? Range
       for i in self
-        new_arr << yield(i)
-        return new_arr
+        new_arr << i
       end
+      yield(new_arr)
     end
   end
 
